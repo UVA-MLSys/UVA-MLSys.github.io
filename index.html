@@ -72,10 +72,11 @@
             }
     
             .card, .video-card {
-                flex: 1;
+                flex: 0 0 340px;
+                min-width: 340px;
+                max-width: 340px;
                 border: 1px solid #eaeaea;
                 padding: 20px;
-                margin: 10px;
                 transition: box-shadow 0.3s;
                 font-size: medium;
             }
@@ -95,7 +96,7 @@
     
             .video-card {
                 background-color: #f4f4f4;
-                height: auto;
+                height: 200px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -119,7 +120,7 @@
             .collaborators-row {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
+                justify-content: flex-start;
                 background-color: #f2f2f2; /* Default grey banner */
                 padding: 1% 0; /* Padding top and bottom for each row */
             }
@@ -477,8 +478,10 @@
             }
             .row2 {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center; /* Center the boxes horizontally */
+                flex-wrap: nowrap;
+                gap: 20px;
+                padding: 10px;
+                width: max-content;
             }
             .specialcontainer {
                 display: flex;
@@ -724,7 +727,15 @@
     <div class="container">
         <h1 class="title">Interpretable AI for Spatio-Temporal Models</h1>
         <!-- Projects Row -->
+        <div class="section-container">
         <div class="row2" id="projects">
+            <div class="card">
+                <h2>Cosmo3DFlow: Wavelet Flow Matching for Spatial-to-Spectral Compression in Reconstructing the Early Universe</h2>
+                <p class="projectdescription">
+                    Cosmo3DFlow is a novel generative framework for reconstructing the early Universe from present-day observations. By combining 3D Discrete Wavelet Transform (DWT) flow matching with Temporal Homology (TH), it decouples high- and low-frequency cosmological structures for efficient spatial compression. Using N-body simulations, Cosmo3DFlow achieves 10x faster sampling than diffusion models, enabling initial conditions to be reconstructed in seconds rather than minutes. <a href="https://github.com/UVA-MLSys/IC-Wavelet-Flow" class="read-more">Read more</a>
+                </p>
+            </div>
+
             <div class="card">
                 <!-- <a href="https://github.com/UVA-MLSys/gpce-covid" style="display: block; text-decoration: none; color: inherit;"> -->
                     <h2>Large Language Models for Financial Aid
@@ -734,6 +745,7 @@
                     </p>
                 <!-- </a> -->
             </div>
+
             <div class="card">
                 <!-- <a href="https://github.com/UVA-MLSys/gpce-covid" style="display: block; text-decoration: none; color: inherit;"> -->
                     <h2>Interpreting Spatio-Temporal patterns with Self-Attention</h2>
@@ -778,22 +790,25 @@
 
             
         </div>
+        </div>
 
         <!-- Videos Row -->
+        <div class="section-container">
         <div class="row2" id="videos">
+            <div class="video-card"></div>
             <div class="video-card">
-                <iframe src="https://drive.google.com/file/d/1nQ8WzU3vBx2vm-f7sDD-ZFUvsch3GFZW/preview" width="560" height="315" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1nQ8WzU3vBx2vm-f7sDD-ZFUvsch3GFZW/preview" style="width:100%;height:100%;" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-card">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ref11GvSm4w" frameborder="0" allowfullscreen></iframe>
+                <iframe style="width:100%;height:100%;" src="https://www.youtube.com/embed/ref11GvSm4w" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="video-card">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/J1LW2DPxuzM" title="Judy Fox, University of Virginia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe style="width:100%;height:100%;" src="https://www.youtube.com/embed/J1LW2DPxuzM" title="Judy Fox, University of Virginia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-card">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/BPQ-pgtPqRc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe style="width:100%;height:100%;" src="https://www.youtube.com/embed/BPQ-pgtPqRc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            
+        </div>
         </div>
 
         <!-- Contributors, Awards, Publications -->
@@ -870,6 +885,18 @@
                 <h3 class="subheading">Referred Journal Article Citations/References</h3>
                 <div class="sectioncontainer">
                      <div class="column">
+                        <div class="publication-box">
+                            <img src="/pics/img/cosmo3dflow.png" alt="Publication Logo Cosmo3DFlow" class="box-logo">
+                            <div class="box-content">
+                                <a class="awardlink" href="https://github.com/UVA-MLSys/IC-Wavelet-Flow">
+                                    <h2>Cosmo3DFlow: Wavelet Flow Matching for Spatial-to-Spectral Compression in Reconstructing the Early Universe</h2>
+                                </a>
+                                <p class="publicationparagraph">Submitted to KDD 2026 (32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining), Jeju, Korea.</p>
+                                <p class="publicationparagraph">
+                                    Reconstructing the early Universe from the evolved present-day Universe is a challenging and computationally demanding problem in modern astrophysics. We devise a novel generative framework, Cosmo3DFlow, designed to address dimensionality and sparsity, the critical bottlenecks inherent in current state-of-the-art methods for cosmological inference. By integrating 3D Discrete Wavelet Transform (DWT) flow matching to effectively represent high-dimensional cosmological data, and Temporal Homology (TH) to decouple high-frequency details from low-frequency structures through spatial compression, and wavelet-space velocity fields facilitate stable ordinary differential equation (ODE) solvers with large step sizes. Using 3D N-body cosmological simulations, at T=128, we achieve 10x faster sampling than diffusion models, combining a 5x reduction in integration steps with lower per-step computational cost from wavelet compression. Our results enable initial conditions to be sampled in seconds, compared to minutes for previous methods.
+                                </p>
+                            </div>
+                        </div>
                         <div class="publication-box">
                             <img src="/pics/img/finaid.png" alt="Publication Logo 3" class="box-logo">
                             <div class="box-content">
@@ -971,6 +998,13 @@
                 <div class="section-container">
                     <div class="row">
                         <div class="package-box">
+                            <img src="/pics/img/cosmo3dflow.png" alt="Software Package Logo Cosmo3DFlow" class="box-logo">
+                            <div class="box-content">
+                                <h2>Cosmo3DFlow: Wavelet Flow Matching for Early Universe Reconstruction</h2>
+                                <p>Github: <a href="https://github.com/UVA-MLSys/IC-Wavelet-Flow">Link</a></p>
+                            </div>
+                        </div>
+                        <div class="package-box">
                             <img src="/pics/img/finaidss.png" alt="Software Package Logo 4" class="box-logo">
                             <div class="box-content">
                                 <h2>Large Language Models for Financial Aid
@@ -1040,6 +1074,11 @@
                         <div class="collaborator-name">Dr. Judy Fox</div>
                         <div class="collaborator-details">Data Science, Computer Science </div>
                     </div>
+                    <div class="collaborator">
+                        <img src="./pics/img/Geoffrey Fox.png" alt="Geoffrey Fox">
+                        <div class="collaborator-name">Geoffrey Fox</div>
+                        <div class="collaborator-details">Professor, University of Virginia</div>
+                    </div>
                 </div>
     
     
@@ -1051,10 +1090,42 @@
                         <div class="collaborator-details">Computer Science</div>
                     </div>
                     <div class="collaborator">
+                        <img src="./pics/img/Zeyu Xia.jpg" alt="Zeyu Xia">
+                        <div class="collaborator-name">Zeyu Xia</div>
+                        <div class="collaborator-details">Computer Science</div>
+                    </div>
+                    <div class="collaborator">
+                        <img src="./pics/img/Mills Staylor.jpg" alt="Mills Staylor">
+                        <div class="collaborator-name">Mills Staylor</div>
+                        <div class="collaborator-details">Computer Science</div>
+                    </div>
+                </div>
+    
+                <h2 class="collaborator-group">Masters Students</h2>
+                <div class="collaborators-row">
+                    <div class="collaborator">
+                        <img src="./pics/img/Eric He.jpg" alt="Eric He">
+                        <div class="collaborator-name">Eric He</div>
+                        <div class="collaborator-details">Computer Science</div>
+                    </div>
+                </div>
+    
+                <h2 class="collaborator-group">Undergraduate Students</h2>
+                <div class="collaborators-row">
+                    <div class="collaborator">
+                        <img src="./pics/img/Ryan Goudjil.png" alt="Ryan Goudjil">
+                        <div class="collaborator-name">Ryan Goudjil</div>
+                        <div class="collaborator-details">Computer Science, Statistics</div>
+                    </div>
+                </div>
+
+                <h2 class="collaborator-group">Alumni</h2>
+                <div class="collaborators-row">
+                    <div class="collaborator">
                         <img src="./pics/img/headshot.jpg" alt="Kaleigh O'Hara">
                         <div class="collaborator-name">Kaleigh O'Hara</div>
                         <div class="collaborator-details">Data Science</div>
-                    </div>    
+                    </div>
                     <div class="collaborator">
                         <img src="./pics/img/IMG_9715 - Ian Liu.PNG" alt="Yingzheng Liu">
                         <div class="collaborator-name">Yingzheng Liu</div>
@@ -1064,11 +1135,7 @@
                         <img src="./pics/img/Mia Yuan.png" alt="Mia Yuan">
                         <div class="collaborator-name">Mia Yuan</div>
                         <div class="collaborator-details">Data Science</div>
-                    </div>        
-                </div>
-    
-                <h2 class="collaborator-group">Masters Students</h2>
-                <div class="collaborators-row">
+                    </div>
                     <div class="collaborator">
                         <img src="./pics/img/headshot - Andrej Erkelens.jpeg" alt="Andrej Erkelens">
                         <div class="collaborator-name">Andrej Erkelens</div>
@@ -1089,10 +1156,6 @@
                         <div class="collaborator-name">Aparna Marathe</div>
                         <div class="collaborator-details">Data Science</div>
                     </div>
-                </div>
-    
-                <h2 class="collaborator-group">Undergraduate Students</h2>
-                <div class="collaborators-row">
                     <div class="collaborator">
                         <img src="./pics/img/Nicholas Kellogg.png" alt="Nicholas Kellogg">
                         <div class="collaborator-name">Nicholas Kellogg</div>
@@ -1139,18 +1202,9 @@
                         <div class="collaborator-details">Systems Engineering, Data Science</div>
                     </div>
                     <div class="collaborator">
-                        <img src="./pics/img/Ryan Goudjil.png" alt="Ryan Goudjil">
-                        <div class="collaborator-name">Ryan Goudjil</div>
-                        <div class="collaborator-details">Computer Science, Statistics</div>
-                    </div>
-                    <div class="collaborator">
                         <img src="./pics/img/Xin Sun.jpeg" alt="Xin Sun">
                         <div class="collaborator-name">Xin Sun</div>
-                        <div class="collaborator-details">CS</div>
-                    </div> 
-                    <div class="collaborator">  
-                    </div>
-                    <div class="collaborator">  
+                        <div class="collaborator-details">Computer Science</div>
                     </div>
                 </div>
             </div>
