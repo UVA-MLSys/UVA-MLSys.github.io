@@ -369,20 +369,18 @@
                 flex-shrink: 0;
             }
 
-            /* Publication images: fixed column width so all rows align */
+            /* Publication images: match main branch sizing */
             .publication-box .box-logo {
-                width: 140px;
-                height: 120px;
-                max-width: 140px;
-                max-height: 120px;
+                width: auto;
+                height: auto;
+                max-width: 300px;
+                max-height: none;
                 object-fit: contain;
                 object-position: center;
                 flex-shrink: 0;
                 align-self: flex-start;
                 margin-bottom: 0;
-                background: #f8fafc;
                 border-radius: 8px;
-                padding: 8px;
             }
 
             .box-content { font-size: 1.3rem; }
@@ -441,6 +439,7 @@
                 color: #475569;
                 font-size: 1.35rem;
                 padding: 4px 0;
+                text-align: justify;
                 text-align: left;
             }
 
